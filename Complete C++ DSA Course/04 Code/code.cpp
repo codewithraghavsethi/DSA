@@ -1,18 +1,34 @@
 #include <iostream>
 using namespace std;
 
-int facN(int n){
-    int fac = 1;
+int main()
+{
+    int marks;
+    cout << "Enter Your Marks: ";
+    cin >> marks;
 
-    for(int i=1; i<=n; i++){
-        fac = fac * i;
+    if (marks >= 90)
+    {
+        cout << "A++";
     }
-
-    return fac;
-}
-
-int main(){
-    cout << "Factorial of = " << facN(4) << endl;
-
-    return 0;
+    else if (marks >= 80 && marks <= 90)
+    {
+        cout << "A";
+    }
+    else if (marks >= 70 && marks <= 80)
+    {
+        cout << "B";
+    }
+    else if (marks >= 60 && marks <= 70)
+    {
+        cout << "C";
+    }
+    else if (marks >= 50 && marks <= 60)
+    {
+        cout << "D";
+    }
+    else
+    {
+        cout << "Fail";
+    }
 }

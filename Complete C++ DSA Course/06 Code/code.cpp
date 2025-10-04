@@ -1,23 +1,31 @@
 #include <iostream>
 using namespace std;
 
-int linearSearch(int arr[], int sz, int target)
+int factorial(int n)
 {
-    for (int i=0; i<sz; i++){
-        if(arr[i] == target ){
+    int fact = 1;
 
-            return i; // Found
-        }
+    for (int i = 1; i <= n; i++)
+    {
+        fact *= i;
     }
-        return -1; // Not Found
+    return fact;
+}
+
+int nCr(int n, int r)
+{
+    int fact_n = factorial(n);
+    int fact_r = factorial(r);
+    int fact_nmr = factorial(n - r);
+
+    return fact_n / (fact_r * fact_nmr);
 }
 
 int main()
 {
-    int arr[] = {1, 4, 5, 12, 22, 8, 23};
-    int sz = 7;
-    int target = 8;
+    int n = 6, r = 3;
 
-    cout << linearSearch(arr, sz, target) << endl;
+    cout << nCr(n, r) << endl;
+
     return 0;
 }
